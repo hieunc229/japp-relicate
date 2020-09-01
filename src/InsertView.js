@@ -19,7 +19,6 @@ export default class InsertView extends React.Component {
     text;
 
     handleInsert = () => {
-        console.log(this.text)
         conn.Users.insert({ name: this.text });
     }
 
@@ -29,7 +28,7 @@ export default class InsertView extends React.Component {
                 ref={ref => this.input = ref}
                 style={inputStyles}
                 onChangeText={text => this.text = text}
-                placeholder="Insert me..." />
+                placeholder="Enter a name..." />
             <Button
                 onPress={this.handleInsert}
                 title="Insert"

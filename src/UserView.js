@@ -46,8 +46,8 @@ function UserItem(props) {
         conn.Users.remove(user.id);
     }
     return <View style={itemStyles} key={`user-${user.id}`}>
-        <Text>{user.name}</Text>
-        <Button title="[x]" onPress={handleClick} />
+        <Text style={itemTextTyles}>{user.name}</Text>
+        <Button title="[remove]" onPress={handleClick} />
     </View>
 }
 
@@ -55,5 +55,11 @@ const itemStyles = {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    borderBottomWidth: 1,
+    borderBottomColor: `rgba(0,0,0,0.2)`
+}
+
+const itemTextTyles = {
+    fontSize: 16
 }

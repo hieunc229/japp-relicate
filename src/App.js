@@ -21,7 +21,7 @@ import InsertView from './InsertView';
 import UserView from './UserView';
 
 const App = () => {
-  let [show, setShow] = React.useState(false);
+  let [show, setShow] = React.useState(true);
 
   function toggle() {
     setShow(!show);
@@ -32,7 +32,7 @@ const App = () => {
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <InsertView />
-        <Button title="Toggle" onPress={toggle} />
+        <Button title={`${show ? 'Hide' : 'Show'} list`} onPress={toggle} />
         {show && <UserView />}
       </SafeAreaView>
     </>
